@@ -38,27 +38,47 @@ int main() {
             tabuleiro[3-x][3-x] = 3;
          printf("Navio em (%d, %d)\n", 3 - x,3-x  );//coordenadas dos navios   
         }
-    
-    
-    
-
 
     // Nível Mestre - Habilidades Especiais com Matrizes
     // Sugestão: Crie matrizes para representar habilidades especiais como cone, cruz, e octaedro.
     // Sugestão: Utilize estruturas de repetição aninhadas para preencher as áreas afetadas por essas habilidades no tabuleiro.
     // Sugestão: Exiba o tabuleiro com as áreas afetadas, utilizando 0 para áreas não afetadas e 1 para áreas atingidas.
 
-    // Exemplos de exibição das habilidades:
-    // Exemplo para habilidade em cone:
-    // 0 0 1 0 0
-    // 0 1 1 1 0
-    // 1 1 1 1 1
-    
-    // Exemplo para habilidade em octaedro:
-    // 0 0 1 0 0
-    // 0 1 1 1 0
-    // 0 0 1 0 0
+        int centro = 2;   // coluna central
+       int inicioLinha = 7;
 
+    for (int i = 0; i < 3; i++) {           // altura do cone
+    for (int j = -i; j <= i; j++) {     // largura cresce
+        tabuleiro[inicioLinha + i][centro + j] = 1;
+    }
+}
+
+        
+
+
+
+    
+   
+    
+
+    for (int i = 0; i < 3; i++) // habilidade em octaedro:
+    {
+        if(i>0 && i<2){ // adiciona 3 espaçõs na segunda linha
+        for (int x = 0; x < 3; x++)
+        {
+            tabuleiro[4+i][5+x-i]=1;
+        }}else
+        {
+            for (int x = 0; x < 3; x++)
+        {
+            tabuleiro[4+i][5]=1;
+        }
+        }
+
+    
+        
+    }
+    
     // Exemplo para habilidade em cruz:
     // 0 0 1 0 0
     // 1 1 1 1 1
