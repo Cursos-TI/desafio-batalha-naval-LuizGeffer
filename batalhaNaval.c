@@ -4,16 +4,44 @@
 // Este código inicial serve como base para o desenvolvimento do sistema de Batalha Naval.
 // Siga os comentários para implementar cada parte do desafio.
 
-int main() {
-    // Nível Novato - Posicionamento dos Navios
-    // Sugestão: Declare uma matriz bidimensional para representar o tabuleiro (Ex: int tabuleiro[5][5];).
-    // Sugestão: Posicione dois navios no tabuleiro, um verticalmente e outro horizontalmente.
-    // Sugestão: Utilize `printf` para exibir as coordenadas de cada parte dos navios.
 
-    // Nível Aventureiro - Expansão do Tabuleiro e Posicionamento Diagonal
-    // Sugestão: Expanda o tabuleiro para uma matriz 10x10.
-    // Sugestão: Posicione quatro navios no tabuleiro, incluindo dois na diagonal.
-    // Sugestão: Exiba o tabuleiro completo no console, mostrando 0 para posições vazias e 3 para posições ocupadas.
+
+int main() {
+
+    int tabuleiro[10][10] = {0};
+    int x,y;
+    int linha = 2; //posição do navio horizointal
+    int coluna = 4; //posição do navio horizointal
+    int linhay = 1; //posição do navio vertical
+    int colunay = 1; //posição do navio vertical
+
+
+    for (int i = 0; i < 3; i++) {  // declara navio de 3 partes horizontal
+    tabuleiro[linha][coluna + i] = 3; 
+    printf("Navio em (%d, %d)\n", linha, coluna + i); //coordenadas dos navios
+    }
+
+    for (int i = 0; i < 5; i++) { // declara navio de 5 partes vertical
+    tabuleiro[linhay + i][colunay] = 3;
+    printf("Navio em (%d, %d)\n", linhay + i, colunay );//coordenadas dos navios
+    }
+
+    
+        for (int x = 0; x < 4; x++)  // declara navio de 4 partes diagonal
+        {
+            tabuleiro[6+x][6+x] = 3;
+         printf("Navio em (%d, %d)\n", 6 + x,6+x  );//coordenadas dos navios   
+        }
+
+          for (int x = 0; x < 4; x++)  // declara navio de 4 partes diagonal
+        {
+            tabuleiro[3-x][3-x] = 3;
+         printf("Navio em (%d, %d)\n", 3 - x,3-x  );//coordenadas dos navios   
+        }
+    
+    
+    
+
 
     // Nível Mestre - Habilidades Especiais com Matrizes
     // Sugestão: Crie matrizes para representar habilidades especiais como cone, cruz, e octaedro.
@@ -36,5 +64,12 @@ int main() {
     // 1 1 1 1 1
     // 0 0 1 0 0
 
+ // Exibe tabuleiro, para visualização
+    for(x=0;x<10;x++){   // colunas
+        for(y=0;y<10;y++){ // linhas
+            printf("%d  ", tabuleiro[x][y]); // imprime o tabuleiro
+        }
+        printf("\n"); // espaço para as linhas;
+    }
     return 0;
 }
