@@ -63,26 +63,38 @@ int main() {
 
     for (int i = 0; i < 3; i++) // habilidade em octaedro:
     {
-        if(i>0 && i<2){ // adiciona 3 espaçõs na segunda linha
+        if(i>0 && i<2){ // adiciona 3 espaços na segunda linha
         for (int x = 0; x < 3; x++)
         {
-            tabuleiro[4+i][5+x-i]=1;
+            tabuleiro[4+i][5+x-i]=1;  // adiciona a habilidade na [4][5]
         }}else
-        {
-            for (int x = 0; x < 3; x++)
-        {
-            tabuleiro[4+i][5]=1;
-        }
+        {   
+            tabuleiro[4+i][5]=1;  
         }
 
-    
         
     }
+
+
     
     // Exemplo para habilidade em cruz:
     // 0 0 1 0 0
     // 1 1 1 1 1
     // 0 0 1 0 0
+
+     for (int i = 0; i < 3; i++) // habilidade em octaedro:
+    {
+        if(i>0 && i<2){ // adiciona 5 espaços na segunda linha
+        for (int x = 0; x < 5; x++)
+        {
+            tabuleiro[0+i][7+x-2]=1;  // adiciona a habilidade na [4][5] , o "-2" serve para centralizar no centro a habilidade
+        }}else
+        {   
+            tabuleiro[0+i][7]=1;  
+        }
+
+        
+    }
 
  // Exibe tabuleiro, para visualização
     for(x=0;x<10;x++){   // colunas
